@@ -9,12 +9,12 @@ public class Products {
         return grossPrice / (1 + taxRate);
     }
 
-    public static void appendStringToFile(String fileName, String passedString){
+    public static void appendStringToFile(String fileName, String passedString) {
         try {
             FileWriter file = new FileWriter(fileName, true);
             file.write(passedString + "\n");
             file.close();
-        } catch(IOException e) {
+        } catch (IOException e) {
             System.err.println("Error appending to file " + fileName + ".");
         }
     }
@@ -41,6 +41,6 @@ public class Products {
 
         appendStringToFile("toDoList", "Order business cards.");
         appendStringToFile("toDoList", "Create campaign.");
-
+        appendStringToFile("toDoList", "Pay the bills");
     }
 }
