@@ -1,10 +1,22 @@
 import java.util.Queue;
 import java.util.LinkedList;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Products {
 
     public static double calculateNetPrice(double grossPrice, double taxRate) {
         return grossPrice / (1 + taxRate);
+    }
+
+    public static void appendStringToFile(String fileName, String passedString){
+        try {
+            FileWriter file = new FileWriter(fileName, true);
+            file.write(passedString + "\n");
+            file.close();
+        } catch(IOException e) {
+            System.err.println("Error appending to file " + fileName + ".");
+        }
     }
 
     public static void main(String[] args) {
@@ -27,6 +39,8 @@ public class Products {
             System.out.println(products.poll());
         }
 
+        appendStringToFile("toDoList", "Order business cards.");
+        appendStringToFile("toDoList", "Create campaign.");
 
     }
 }
