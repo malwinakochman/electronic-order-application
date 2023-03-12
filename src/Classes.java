@@ -9,7 +9,7 @@ public class Classes {
         this.students = new ArrayList<String>();
     }
 
-    public void registerStudent(String student){
+    public void registerStudent(String student) {
         if (this.students.size() >= 10) {
             System.out.println("No more students can be register for these classes.");
         } else {
@@ -18,7 +18,7 @@ public class Classes {
         }
     }
 
-    public void displayList(){
+    public void displayList() {
         System.out.println(this.students);
     }
 
